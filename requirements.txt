@@ -1,0 +1,10 @@
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+scikit-image>=0.22
+opencv-python>=4.8,<5   # 4.x includes the Haar face detector data
+Pillow>=10
+matplotlib>=3.8
+joblib>=1.3
+jupyter
