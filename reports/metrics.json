@@ -1,0 +1,312 @@
+{
+  "generated_at": "2026-11-13T13:32:12+00:00",
+  "face_voice_data_source": "real",
+  "member_customer_map": {
+    "Happy": 187,
+    "Innocent": 101,
+    "Keyla": 114,
+    "Premier": 188
+  },
+  "merge": {
+    "transactions": {
+      "rows_in": 150,
+      "exact_duplicates": 0,
+      "null_ratings": 10,
+      "rows_out": 150
+    },
+    "social": {
+      "rows_in": 155,
+      "exact_duplicates": 5,
+      "nulls": 0,
+      "rows_out": 150,
+      "customers": 84,
+      "customers_with_multiple_rows": 41
+    },
+    "merge": {
+      "transactions_before": 150,
+      "customers_in_transactions": 75,
+      "customers_in_social": 84,
+      "customers_matched": 61,
+      "rows_after_merge": 117,
+      "transactions_dropped_no_social": 33,
+      "duplicate_transaction_ids": 0,
+      "null_join_keys": 0
+    }
+  },
+  "face": {
+    "selected_model": "logistic_regression",
+    "members": [
+      "Happy",
+      "Innocent",
+      "Keyla",
+      "Premier"
+    ],
+    "cv": {
+      "logistic_regression": {
+        "accuracy": 0.7638888888888888,
+        "f1_macro": 0.7479910872537601,
+        "log_loss": 0.5521495818007979,
+        "folds": [
+          {
+            "accuracy": 0.8333333333333334,
+            "f1_macro": 0.8057692307692308,
+            "log_loss": 0.35512426804160163,
+            "held_out": "neutral"
+          },
+          {
+            "accuracy": 0.6666666666666666,
+            "f1_macro": 0.6078947368421053,
+            "log_loss": 1.0584405107138803,
+            "held_out": "smiling"
+          },
+          {
+            "accuracy": 0.7916666666666666,
+            "f1_macro": 0.7478991596638656,
+            "log_loss": 0.24288396664691167,
+            "held_out": "surprised"
+          }
+        ]
+      },
+      "random_forest": {
+        "accuracy": 0.6666666666666666,
+        "f1_macro": 0.6654344193817878,
+        "log_loss": 0.8854974685078161,
+        "folds": [
+          {
+            "accuracy": 0.7916666666666666,
+            "f1_macro": 0.7396978021978022,
+            "log_loss": 0.8216317347636434,
+            "held_out": "neutral"
+          },
+          {
+            "accuracy": 0.5,
+            "f1_macro": 0.44047619047619047,
+            "log_loss": 1.112916224731704,
+            "held_out": "smiling"
+          },
+          {
+            "accuracy": 0.7083333333333334,
+            "f1_macro": 0.6439393939393939,
+            "log_loss": 0.7219444460281009,
+            "held_out": "surprised"
+          }
+        ]
+      }
+    },
+    "confusion_matrix": [
+      [
+        18,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        7,
+        7,
+        1
+      ],
+      [
+        0,
+        0,
+        18,
+        0
+      ],
+      [
+        0,
+        0,
+        6,
+        12
+      ]
+    ],
+    "thresholds": {
+      "min_confidence": 0.5637087712153723,
+      "min_similarity": 0.06831079477205936
+    },
+    "open_set": {
+      "false_reject_rate": 0.07272727272727275,
+      "false_accept_rate_held_out_strangers": null,
+      "wrong_person_accepted_rate": 0.08333333333333333
+    }
+  },
+  "voice": {
+    "selected_model": "logistic_regression",
+    "members": [
+      "Happy",
+      "Innocent",
+      "Keyla",
+      "Premier"
+    ],
+    "cv": {
+      "logistic_regression": {
+        "accuracy": 0.9166666666666666,
+        "f1_macro": 0.9180602006688963,
+        "log_loss": 0.44649336114136157,
+        "folds": [
+          {
+            "accuracy": 0.9583333333333334,
+            "f1_macro": 0.958041958041958,
+            "log_loss": 0.5209210637818928,
+            "held_out": "confirm_transaction"
+          },
+          {
+            "accuracy": 0.875,
+            "f1_macro": 0.8772727272727273,
+            "log_loss": 0.37206565850083023,
+            "held_out": "yes_approve"
+          }
+        ]
+      },
+      "random_forest": {
+        "accuracy": 0.75,
+        "f1_macro": 0.7620712620712621,
+        "log_loss": 0.9255876858993215,
+        "folds": [
+          {
+            "accuracy": 0.75,
+            "f1_macro": 0.7416666666666667,
+            "log_loss": 0.9664509159267104,
+            "held_out": "confirm_transaction"
+          },
+          {
+            "accuracy": 0.75,
+            "f1_macro": 0.7499999999999999,
+            "log_loss": 0.8847244558719328,
+            "held_out": "yes_approve"
+          }
+        ]
+      }
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        11,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        11
+      ]
+    ],
+    "thresholds": {
+      "min_confidence": 0.3480568065345016,
+      "min_similarity": 0.015261840573542034
+    },
+    "open_set": {
+      "false_reject_rate": 0.045454545454545414,
+      "false_accept_rate_held_out_strangers": null,
+      "wrong_person_accepted_rate": 0.0625
+    }
+  },
+  "product": {
+    "selected_model": "random_forest",
+    "n_rows": 117,
+    "n_customers": 61,
+    "classes": [
+      "Books",
+      "Clothing",
+      "Electronics",
+      "Groceries",
+      "Sports"
+    ],
+    "cv_customer_grouped": {
+      "baseline_class_frequency": {
+        "accuracy": 0.21709401709401707,
+        "f1_macro": 0.11689154248405362,
+        "log_loss": 1.6011212274737574,
+        "accuracy_std": 0.004187161953475517
+      },
+      "logistic_regression": {
+        "accuracy": 0.27179487179487183,
+        "f1_macro": 0.26627274564369696,
+        "log_loss": 1.867944992141981,
+        "accuracy_std": 0.02051282051282052
+      },
+      "random_forest": {
+        "accuracy": 0.3042735042735043,
+        "f1_macro": 0.25316732511467394,
+        "log_loss": 1.6134678612480102,
+        "accuracy_std": 0.013887245136129838
+      },
+      "gradient_boosting": {
+        "accuracy": 0.26666666666666666,
+        "f1_macro": 0.25221755835354354,
+        "log_loss": 1.8368134197340094,
+        "accuracy_std": 0.04130955888408401
+      }
+    },
+    "time_holdout": {
+      "baseline_class_frequency": {
+        "accuracy": 0.08333333333333333,
+        "f1_macro": 0.03076923076923077,
+        "log_loss": 1.668197361520109
+      },
+      "random_forest": {
+        "accuracy": 0.16666666666666666,
+        "f1_macro": 0.16153846153846152,
+        "log_loss": 1.6792514592092758
+      },
+      "test_rows": 24,
+      "test_starts": "2024-05-01"
+    },
+    "permutation_test": {
+      "observed_accuracy": 0.29914529914529914,
+      "null_mean_accuracy": 0.2182905982905983,
+      "null_95th_percentile": 0.29957264957264956,
+      "p_value": 0.07920792079207921,
+      "n_permutations": 100
+    },
+    "confusion_matrix": [
+      [
+        0,
+        5,
+        6,
+        1,
+        8
+      ],
+      [
+        2,
+        6,
+        5,
+        0,
+        9
+      ],
+      [
+        1,
+        2,
+        16,
+        5,
+        3
+      ],
+      [
+        3,
+        2,
+        5,
+        3,
+        7
+      ],
+      [
+        2,
+        3,
+        11,
+        2,
+        10
+      ]
+    ]
+  }
+}
